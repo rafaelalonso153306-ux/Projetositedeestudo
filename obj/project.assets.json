@@ -4708,23 +4708,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rafael.aschagas\\.nuget\\packages\\": {},
+    "C:\\Users\\giovanna.vsantos8\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafael.aschagas\\Desktop\\Projeto site de estudo\\Projetositedeestudo\\Projetositedeestudo.csproj",
+      "projectUniqueName": "C:\\Users\\giovanna.vsantos8\\Desktop\\Projetositedeestudo\\Projetositedeestudo.csproj",
       "projectName": "Projetositedeestudo",
-      "projectPath": "C:\\Users\\rafael.aschagas\\Desktop\\Projeto site de estudo\\Projetositedeestudo\\Projetositedeestudo.csproj",
-      "packagesPath": "C:\\Users\\rafael.aschagas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.aschagas\\Desktop\\Projeto site de estudo\\Projetositedeestudo\\obj\\",
+      "projectPath": "C:\\Users\\giovanna.vsantos8\\Desktop\\Projetositedeestudo\\Projetositedeestudo.csproj",
+      "packagesPath": "C:\\Users\\giovanna.vsantos8\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\giovanna.vsantos8\\Desktop\\Projetositedeestudo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\rafael.aschagas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\giovanna.vsantos8\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

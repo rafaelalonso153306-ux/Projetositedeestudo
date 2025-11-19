@@ -13,6 +13,8 @@ public class HomeController : Controller
         _logger = logger;
     }
         //vai corinthians
+     
+     //fagvgsadfvuagvdj//
     public IActionResult Index()
     {
         return View();
