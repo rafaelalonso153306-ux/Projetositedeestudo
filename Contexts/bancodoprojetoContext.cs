@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using Projetositedeestudo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projetositedeestudo.Contexts;
 
@@ -16,17 +16,17 @@ public partial class bancodoprojetoContext : DbContext
     {
     }
 
-    public virtual DbSet<Atividade> Atividades { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<Atividade> Atividades { get; set; }
 
-    public virtual DbSet<Conteudo> Conteudos { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<Conteudo> Conteudos { get; set; }
 
-    public virtual DbSet<Curso> Cursos { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<Curso> Cursos { get; set; }
 
-    public virtual DbSet<MateriaUsuario> MateriaUsuarios { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<MateriaUsuario> MateriaUsuarios { get; set; }
 
-    public virtual DbSet<Materium> Materia { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<Materium> Materia { get; set; }
 
-    public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual Microsoft.EntityFrameworkCore.DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -147,6 +147,11 @@ public partial class bancodoprojetoContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
+    }
+
+    internal void SaveChanges()
+    {
+        throw new NotImplementedException();
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

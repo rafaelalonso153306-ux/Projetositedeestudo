@@ -14,6 +14,7 @@ namespace Projetositedeestudo.Controllers
     public class UsuarioController : Controller
     {
         bancodoprojetoContext context = new bancodoprojetoContext();
+
         public IActionResult Index()
         {
             //forma de listar todos os itens da tabela de (Usuario)
@@ -27,9 +28,10 @@ namespace Projetositedeestudo.Controllers
         public IActionResult CadastrarUsuarios(Usuario usuario)
         {
             //armazenar a equipe no banco de dados
-            // context.Add(usuario);
+            context.Add(usuario);
+
             // // Registrar as alterações no banco de dados  
-            // context.SaveChanges();
+            context.SaveChanges();
 
             return RedirectToAction("Index");
 
