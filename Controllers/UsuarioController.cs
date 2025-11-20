@@ -27,17 +27,12 @@ namespace Projetositedeestudo.Controllers
         public IActionResult CadastrarUsuarios(Usuario usuario)
         {
             //armazenar a equipe no banco de dados
-            context.Add(usuario);
-            // Registrar as alterações no banco de dados  
-            context.SaveChanges();
+            // context.Add(usuario);
+            // // Registrar as alterações no banco de dados  
+            // context.SaveChanges();
 
             return RedirectToAction("Index");
 
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
