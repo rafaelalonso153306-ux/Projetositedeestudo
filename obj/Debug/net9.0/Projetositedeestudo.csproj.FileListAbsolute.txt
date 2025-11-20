@@ -218,3 +218,4 @@ C:\Users\rafael.aschagas\Desktop\Projeto site de estudo\Projetositedeestudo\obj\
 C:\Users\rafael.aschagas\Desktop\Projeto site de estudo\Projetositedeestudo\obj\Debug\net9.0\Projetositedeestudo.pdb
 C:\Users\rafael.aschagas\Desktop\Projeto site de estudo\Projetositedeestudo\obj\Debug\net9.0\Projetositedeestudo.genruntimeconfig.cache
 C:\Users\rafael.aschagas\Desktop\Projeto site de estudo\Projetositedeestudo\obj\Debug\net9.0\ref\Projetositedeestudo.dll
+C:\Users\rafael.aschagas\Desktop\Projeto site de estudo\Projetositedeestudo\obj\Debug\net9.0\Projetositedeestudo.sourcelink.json
