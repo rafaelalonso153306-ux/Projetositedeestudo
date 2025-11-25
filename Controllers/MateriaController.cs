@@ -9,11 +9,11 @@ using Microsoft.Extensions.Logging;
 namespace Projetositedeestudo.Controllers
 {
     [Route("[controller]")]
-    public class MateruimController : Controller
+    public class MateriaController : Controller
     {
-        private readonly ILogger<MateruimController> _logger;
+        private readonly ILogger<MateriaController> _logger;
 
-        public MateruimController(ILogger<MateruimController> logger)
+        public MateriaController(ILogger<MateriaController> logger)
         {
             _logger = logger;
         }

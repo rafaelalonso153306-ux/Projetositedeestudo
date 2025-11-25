@@ -13,7 +13,7 @@ namespace Projetositedeestudo.Controllers
     [Route("[controller]")]
     public class UsuarioController : Controller
     {
-        bancodoprojetoContext context = new bancodoprojetoContext();
+        BancoDoProjetoContext context = new BancoDoProjetoContext();
 
         public IActionResult Index()
         {
@@ -24,17 +24,23 @@ namespace Projetositedeestudo.Controllers
             return View();
         }
         
-        [Route("cadastrar")]
-        public IActionResult CadastrarUsuarios(Usuario usuario)
+        [Route("Cadastrar")]
+        public IActionResult Cadastrar(Usuario usuario)
         {
-            //armazenar a equipe no banco de dados
-            context.Add(usuario);
+            try
+            {
+                //armazenar a equipe no banco de dados
+                context.Add(usuario);
 
-            // // Registrar as alterações no banco de dados  
-            context.SaveChanges();
+                // // Registrar as alterações no banco de dados  
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
             return RedirectToAction("Index");
-
         }
     }
 }
