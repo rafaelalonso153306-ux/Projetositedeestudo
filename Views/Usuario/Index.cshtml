@@ -1,25 +1,70 @@
 @page
 
 <div>
-<h1>Tela do usuario</h1>
-<form method="POST" asp-action="Cadastrar" asp-controller="Usuario">
-    <div class="form-control">
-        <label for="nome">Nome do Usuario</label>
-        <input type="text" name="Nome">
-    </div>
+    <h1>Tela do usuario</h1>
+        <form method="POST" asp-action="Cadastrar" asp-controller="Usuario">
+            <div class="form-control">
+            <label for="nome">Nome do Usuario</label>
+            <input type="text" name="Nome">
+            </div>
 
-    <div class="form-control">
-        <label for="Email">Email</label>
-        <input type="text" name="Email">
-    </div>
+            <div class="form-control">
+            <label for="Email">Email</label>
+            <input type="text" name="Email">
+            </div>
 
-    <div class="form-control">
-        <label for="Senha">Senha</label>
-        <input type="Password" name="Senha">
-    </div>
+            <div class="form-control">
+            <label for="Senha">Senha</label>
+            <input type="Password" name="Senha">
+            </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <select class="form-select" name="IdEquipe"> 
+                    <option>Selecione um curso</option>
+
+                    @if(ViewBag.ListaCursos != null && ViewBag.ListaCursos.Count > 0)
+                    {
+                        @foreach(Curso curso in ViewBag.ListaCursos)  
+                        { 
+                            <option value="@curso.Id">@curso.Titulo</option>  
+                        } 
+                    }
+                </select> 
+
+        </form>
+        <table class="table table-striped">
+            <thead>
+            
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Curso</th>
+                <th>Ações</th>
+
+            </thead>
+            <tbody>
+                @if(ViewBag.Usuario != null && ViewBag.Usuario.Count > 0)
+                {
+                    @foreach(Usuario usuario in ViewBag.Usuario) 
+                    {
+                        <tr>
+                            <td>@usuario.Nome</td>
+                                <td>@usuario.Email</td>
+                                <td>@usuario.Senha</td>
+                                @* <td>@usuario.IdNavigation?.Curso</td>  *@
+                                <td> 
+                                <a class="btn btn-primary" href="/Usuario/Atualizar/@usuario.Id">Atualizar</a>
+
+                                @* passando para funcao de excluir a referencia *@
+                                <a class="btn btn-danger" asp-action="ExcluirUsuario" asp-controller="Usuario" asp-route-id="@usuario.Id">Excluir</a> 
+                            </td> 
+                        </tr>  
+                    }
+                }
+            </tbody>    
+    </table>
+</div>
+
 
 
     

@@ -1,0 +1,22 @@
+@page
+
+
+<div>
+    <h1>Tela de Atualizar Usuario</h1>
+        @* Formulário de cadastro de equipe *@
+    <form method="PUT" asp-action="AtualizarUsuario" asp-controller="Usuario">
+        <input type="hidden" name="Id" value="@ViewBag.Usuarios.Id">
+
+        <div class="form-control">
+            <label for="nome">Nome do Usuario</label>
+            <input type="text" name="Nome" value="@ViewBag.Usuarios.Nome">
+        </div>
+
+        <div class="form-control">
+            <label for="Email">Email do Usuario</label>
+             <input type="text" name="Email" value="@ViewBag.Usuarios.Email">
+        </div>
+
+        <button class="btn btn-primary">Atualizar</button>
+    </form>
+</div>    
