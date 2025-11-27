@@ -43,16 +43,17 @@
 
             </thead>
             <tbody>
-                @if(ViewBag.Usuario != null && ViewBag.Usuario.Count > 0)
+                @if(ViewBag.listaUsuarios != null && ViewBag.listaUsuarios.Count > 0)
                 {
-                    @foreach(Usuario usuario in ViewBag.Usuario) 
+                    @foreach(Usuario usuario in ViewBag.listaUsuarios) 
                     {
                         <tr>
+
                             <td>@usuario.Nome</td>
-                                <td>@usuario.Email</td>
-                                <td>@usuario.Senha</td>
-                                @* <td>@usuario.IdNavigation?.Curso</td>  *@
-                                <td> 
+                            <td>@usuario.Email</td>
+                            <td>@usuario.Senha</td>
+                            
+                            <td> 
                                 <a class="btn btn-primary" href="/Usuario/Atualizar/@usuario.Id">Atualizar</a>
 
                                 @* passando para funcao de excluir a referencia *@
