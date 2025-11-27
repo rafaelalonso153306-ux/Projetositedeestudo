@@ -1,11 +1,191 @@
 @page
-@model Projetositedeestudo.Views.Curso.Index
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h1>@ViewData["Title"]</h1>
+<h1>Lista de cursos</h1>
 
-<div>
-    
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Cursos</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .course-img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .card-horizontal {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        .stats-card {
+            border-left: 4px solid #0d6efd;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <!-- Título -->
+    <h2 class="fw-bold mb-4">
+        <i class="bi bi-journal-bookmark"></i> Lista de Cursos
+    </h2>
+
+    <!-- Dashboard Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card shadow-sm stats-card p-3">
+                <h5><i class="bi bi-check2-circle text-primary"></i> Publicados</h5>
+                <p class="fs-4 fw-bold">12</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow-sm stats-card p-3">
+                <h5><i class="bi bi-hourglass-split text-warning"></i> Em Revisão</h5>
+                <p class="fs-4 fw-bold">4</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="card p-3 shadow-sm mb-4">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Categoria</label>
+                <select class="form-select">
+                    <option value="">Todas</option>
+                    <option>Iniciante</option>
+                    <option>Intermediario</option>
+                    <option>Avançado</option>
+                    
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Autor</label>
+                <select class="form-select">
+                    <option value="">Todos</option>
+                    <option>Ron Gutmann</option>
+                    <option>Margie Price</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                    <option value="">Todos</option>
+                    <option>Publicado</option>
+                    <option>Pendente</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- LISTA DE CURSOS -->
+    <div class="row g-3">
+
+        <!-- CARD HORIZONTAL -->
+        <div class="col-12">
+            <div class="card shadow-sm p-3 card-horizontal">
+                <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
+
+                <div class="flex-fill">
+                    <h5>Matemática Básica, Iniciante, Curso que aborda operações fundamentais como adição, subtração, multiplicação e divisão.</h5>
+                    <p class="text-muted small">Fonte: google</p>
+                    <span class="badge bg-success mb-2">Publicado</span>
+
+                    <p>Aprenda fundamentos de matematica utilizando ferramentas práticas.</p>
+
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Outro CARD -->
+        <div class="col-12">
+            <div class="card shadow-sm p-3 card-horizontal">
+                <img src="https://via.placeholder.com/300x200?text=Frontend+Dev" class="course-img">
+
+                <div class="flex-fill">
+                    <h5>Matemática –  Intermediário, Frações e Decimais, Compreensão e manipulação de frações, números decimais e situações-problema.</h5>
+                    <p class="text-muted small">Fonte: google</p>
+                    <span class="badge bg-success mb-2">Publicado</span>
+
+                    <p>Curso completo sobre matemática para desenvolvimento e Compreensão e manipulação de frações</p>
+
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-12">
+            <div class="card shadow-sm p-3 card-horizontal">
+                <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
+
+                <div class="flex-fill">
+                    <h5>'Português – Introdução à Leitura', 'Iniciante', 
+ 'Desenvolvimento da leitura, interpretação de textos e formação de vocabulário.'</h5>
+                    <p class="text-muted small">Fonte: google</p>
+                    <span class="badge bg-success mb-2">Publicado</span>
+
+                    <p>Aprenda fundamentos de matematica utilizando ferramentas práticas.</p>
+
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    <!-- PAGINAÇÃO -->
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+        </ul>
+    </nav>
+
 </div>
+
+<!-- MODAL DE DETALHES DO CURSO -->
+<div class="modal fade" id="cursoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalhes do Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Título:</strong> Curso Exemplo</p>
+                <p><strong>Autor:</strong> Nome do autor</p>
+                <p><strong>Descrição:</strong> Aqui vai uma descrição mais detalhada do curso.</p>
+                <p><strong>Status:</strong> Publicado</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

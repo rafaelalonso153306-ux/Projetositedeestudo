@@ -30,6 +30,7 @@ namespace Projetositedeestudo.Controllers
             var listaUsuarios = context.Usuarios.ToList();
             // passar a tela 
             ViewBag.listaUsuarios = listaUsuarios;
+            
             return View();
         }
 
@@ -52,16 +53,20 @@ namespace Projetositedeestudo.Controllers
             return RedirectToAction("Index");
         }
 
-        [Route("ExcluirUsuario/{idCurso}")]
-        public IActionResult ExcluirUsuario(int idCurso)
+        [Route("ExcluirUsuario/{id}")]
+        public IActionResult ExcluirUsuario(int id)
         {
             // pegar o id de refe=rencia e vou procurar a equipe no banco de dados 
-            Usuario usuario = context.Usuarios.FirstOrDefault(x => x.Id == idCurso);
+            Usuario usuario = context.Usuarios.FirstOrDefault(x => x.Id == id);
             // select *from Equipe where id == (valor da equipe da tabela)
+
             context.Remove(usuario);
+
             context.SaveChanges();
+
             return RedirectToAction("Index");
         }
+
         [Route("Atualizar/{id}")]
         public IActionResult Atualizar(int id)
         {
