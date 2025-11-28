@@ -1,8 +1,308 @@
 @page
 
 
-<h1>Atividade</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudos Acessíveis</title>
+  <!-- Bootstrap CSS -->
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
+  <!-- Bootstrap Icons -->
+  https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css
+  <style>
+    body { font-size: 18px; }
+    .btn-lg { font-size: 1.2rem; }
+    .card-title { font-weight: bold; }
+    .atividade-list li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
 
-<div>
-    
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <div class="container">
+    #<i class="bi bi-book"></i> Estudos Acessíveis</a>
+    <button class="btn btn-light btn-sm" onclick="document.body.style.fontSize='22px'">
+      <i class="bi bi-plus-circle"></i> Aumentar Fonte
+    </button>
+  </div>
+</nav>
+
+<!-- Cabeçalho -->
+<header class="bg-light text-center py-4">
+  <h1 class="mb-2">Escolha o Ano</h1>
+  <p>Selecione o ano escolar para ver as matérias e atividades.</p>
+</header>
+
+<!-- Botões dos anos -->
+<section class="container text-center mb-4">
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(1)">1º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(2)">2º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(3)">3º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(4)">4º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(5)">5º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(6)">6º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(7)">7º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(8)">8º Ano</button>
+    <button class="btn btn-outline-primary btn-lg" onclick="mostrarMaterias(9)">9º Ano</button>
+  </div>
+</section>
+
+<!-- Lista de matérias -->
+<main class="container" id="materias" style="display:none;">
+  <h2 class="text-center mb-4">Matérias do <span id="anoSelecionado"></span>º Ano</h2>
+  <div class="row g-3">
+    <!-- Cards -->
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-pencil-square"></i>Língua Portuguesa</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPortugues">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-calculator"></i> Matemática</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMatematica">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-flask"></i> Ciências</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCiencias">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-clock-history"></i> História</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalHistoria">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-map"></i> Geografia</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGeografia">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-palette"></i> Arte</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalArte">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-pencil-square"></i>Biologia</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPortugues">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-pencil-square"></i>Língua Inglesa</h5>
+          <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPortugues">Ver Atividades</button>
+        </div>
+      </div>
+    </div>
+</main>
+
+<!-- Modais com 5 atividades por matéria -->
+<!-- Português -->
+<div class="modal fade" id="modalPortugues" tabindex="-1" aria-labelledby="modalPortuguesLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalPortuguesLabel" class="modal-title">Redação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Leia e identifique a letra inicial das palavras.</li>
+          <li>2. Complete as palavras com a letra que falta.</li>
+          <li>3. Separe as sílabas corretamente.</li>
+          <li>4. Encontre palavras que rimam.</li>
+          <li>5. Responda à pergunta sobre um texto simples.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Matemática -->
+<div class="modal fade" id="modalMatematica" tabindex="-1" aria-labelledby="modalMatematicaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalMatematicaLabel" class="modal-title">Matemática</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Resolva a soma: 2 + 3 = ?</li>
+          <li>2. Resolva a subtração: 5 - 1 = ?</li>
+          <li>3. Complete a sequência: 1, 2, 3, ___</li>
+          <li>4. Conte os objetos: ★★★★</li>
+          <li>5. Compare: Qual número é maior?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ciências -->
+<div class="modal fade" id="modalCiencias" tabindex="-1" aria-labelledby="modalCienciasLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalCienciasLabel" class="modal-title">Ciências</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Aponte as partes do corpo.</li>
+          <li>2. Cite um animal doméstico.</li>
+          <li>3. O que uma planta precisa para viver?</li>
+          <li>4. Qual é a estação mais fria?</li>
+          <li>5. Dê um exemplo de hábito saudável.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- História -->
+<div class="modal fade" id="modalHistoria" tabindex="-1" aria-labelledby="modalHistoriaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalHistoriaLabel" class="modal-title">História</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Quem descobriu o Brasil?</li>
+          <li>2. Cite um fato histórico importante.</li>
+          <li>3. Qual era a capital do Brasil em 1808?</li>
+          <li>4. Quem foi D. Pedro I?</li>
+          <li>5. Qual é a data da Independência do Brasil?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Geografia -->
+<div class="modal fade" id="modalGeografia" tabindex="-1" aria-labelledby="modalGeografiaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalGeografiaLabel" class="modal-title">Geografia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Qual é o maior continente?</li>
+          <li>2. Cite um país da América do Sul.</li>
+          <li>3. Qual é a capital do Brasil?</li>
+          <li>4. O que é um rio?</li>
+          <li>5. Qual é o oceano mais extenso?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Arte -->
+<div class="modal fade" id="modalArte" tabindex="-1" aria-labelledby="modalArteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalArteLabel" class="modal-title">Arte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Desenhe uma figura geométrica.</li>
+          <li>2. Pinte usando cores primárias.</li>
+          <li>3. Crie uma colagem simples.</li>
+          <li>4. Faça um desenho de um animal.</li>
+          <li>5. Identifique uma obra famosa.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Biologia -->
+<div class="modal fade" id="modalArte" tabindex="-1" aria-labelledby="modalArteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalArteLabel" class="modal-title">Biologia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Desenhe uma figura geométrica.</li>
+          <li>2. Pinte usando cores primárias.</li>
+          <li>3. Crie uma colagem simples.</li>
+          <li>4. Faça um desenho de um animal.</li>
+          <li>5. Identifique uma obra famosa.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Língua Inglesa -->
+<div class="modal fade" id="modalArte" tabindex="-1" aria-labelledby="modalArteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalArteLabel" class="modal-title">Língua Inglesa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Desenhe uma figura geométrica.</li>
+          <li>2. Pinte usando cores primárias.</li>
+          <li>3. Crie uma colagem simples.</li>
+          <li>4. Faça um desenho de um animal.</li>
+          <li>5. Identifique uma obra famosa.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Redação -->
+<div class="modal fade" id="modalArte" tabindex="-1" aria-labelledby="modalArteLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"><h5 id="modalArteLabel" class="modal-title">Redação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <ul class="atividade-list">
+          <li>1. Desenhe uma figura geométrica.</li>
+          <li>2. Pinte usando cores primárias.</li>
+          <li>3. Crie uma colagem simples.</li>
+          <li>4. Faça um desenho de um animal.</li>
+          <li>5. Identifique uma obra famosa.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js</script>
+<script>
+  function mostrarMaterias(ano) {
+    document.getElementById('materias').style.display = 'block';
+    document.getElementById('anoSelecionado').textContent = ano;
+    window.scrollTo({ top: document.getElementById('materias').offsetTop, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
