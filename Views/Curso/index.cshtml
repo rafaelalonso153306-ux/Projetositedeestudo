@@ -1,191 +1,348 @@
-@page
+<!-- LISTA DE CURSOS -->
+<div class="row g-3">
 
-<h1>Lista de cursos</h1>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Cursos</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-        .course-img {
-            width: 180px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .card-horizontal {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-        }
-        .stats-card {
-            border-left: 4px solid #0d6efd;
-        }
-    </style>
-</head>
-<body class="bg-light">
-
-<div class="container py-5">
-
-    <!-- Título -->
-    <h2 class="fw-bold mb-4">
-        <i class="bi bi-journal-bookmark"></i> Lista de Cursos
-    </h2>
-
-    <!-- Dashboard Cards -->
-    <div class="row g-3 mb-4">
-        <div class="col-md-3">
-            <div class="card shadow-sm stats-card p-3">
-                <h5><i class="bi bi-check2-circle text-primary"></i> Publicados</h5>
-                <p class="fs-4 fw-bold">12</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card shadow-sm stats-card p-3">
-                <h5><i class="bi bi-hourglass-split text-warning"></i> Em Revisão</h5>
-                <p class="fs-4 fw-bold">4</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- FILTROS -->
-    <div class="card p-3 shadow-sm mb-4">
-        <div class="row g-3">
-            <div class="col-md-4">
-                <label class="form-label">Categoria</label>
-                <select class="form-select">
-                    <option value="">Todas</option>
-                    <option>Iniciante</option>
-                    <option>Intermediario</option>
-                    <option>Avançado</option>
-                    
-                </select>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label">Autor</label>
-                <select class="form-select">
-                    <option value="">Todos</option>
-                    <option>Ron Gutmann</option>
-                    <option>Margie Price</option>
-                </select>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label">Status</label>
-                <select class="form-select">
-                    <option value="">Todos</option>
-                    <option>Publicado</option>
-                    <option>Pendente</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <!-- LISTA DE CURSOS -->
-    <div class="row g-3">
-
-        <!-- CARD HORIZONTAL -->
-        <div class="col-12">
-            <div class="card shadow-sm p-3 card-horizontal">
-                <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
-
-                <div class="flex-fill">
-                    <h5>Matemática Básica, Iniciante, Curso que aborda operações fundamentais como adição, subtração, multiplicação e divisão.</h5>
-                    <p class="text-muted small">Fonte: google</p>
-                    <span class="badge bg-success mb-2">Publicado</span>
-
-                    <p>Aprenda fundamentos de matematica utilizando ferramentas práticas.</p>
-
-                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
-                        Ver detalhes
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-
-        <!-- Outro CARD -->
-        <div class="col-12">
-            <div class="card shadow-sm p-3 card-horizontal">
-                <img src="https://via.placeholder.com/300x200?text=Frontend+Dev" class="course-img">
-
-                <div class="flex-fill">
-                    <h5>Matemática –  Intermediário, Frações e Decimais, Compreensão e manipulação de frações, números decimais e situações-problema.</h5>
-                    <p class="text-muted small">Fonte: google</p>
-                    <span class="badge bg-success mb-2">Publicado</span>
-
-                    <p>Curso completo sobre matemática para desenvolvimento e Compreensão e manipulação de frações</p>
-
-                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
-                        Ver detalhes
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <!-- ================== JÁ EXISTENTES (NÃO REMOVI) ================== -->
+    <!-- Matemática - Iniciante -->
     <div class="col-12">
-            <div class="card shadow-sm p-3 card-horizontal">
-                <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
 
-                <div class="flex-fill">
-                    <h5>'Português – Introdução à Leitura', 'Iniciante', 
- 'Desenvolvimento da leitura, interpretação de textos e formação de vocabulário.'</h5>
-                    <p class="text-muted small">Fonte: google</p>
-                    <span class="badge bg-success mb-2">Publicado</span>
+            <div class="flex-fill">
+                <h5>Matemática Básica – Iniciante – Operações fundamentais como adição, subtração, multiplicação e divisão.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
 
-                    <p>Aprenda fundamentos de matematica utilizando ferramentas práticas.</p>
+                <p>Aprenda os fundamentos da matemática utilizando ferramentas práticas e exercícios do dia a dia.</p>
 
-                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
-                        Ver detalhes
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    <!-- PAGINAÇÃO -->
-    <nav class="mt-4">
-        <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-<!-- MODAL DE DETALHES DO CURSO -->
-<div class="modal fade" id="cursoModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Detalhes do Curso</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p><strong>Título:</strong> Curso Exemplo</p>
-                <p><strong>Autor:</strong> Nome do autor</p>
-                <p><strong>Descrição:</strong> Aqui vai uma descrição mais detalhada do curso.</p>
-                <p><strong>Status:</strong> Publicado</p>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Matemática - Intermediário -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Frontend+Dev" class="course-img">
 
-</body>
-</html>
+            <div class="flex-fill">
+                <h5>Matemática – Intermediário – Frações e Decimais. Manipulação, conversão e resolução de problemas.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Curso completo sobre frações, números decimais e situações-problema com aplicações práticas.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Português - Iniciante (JÁ EXISTIA) -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Web+Design" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Português – Iniciante – Introdução à leitura, interpretação de textos e formação de vocabulário.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Desenvolva suas habilidades de leitura e compreensão textual com atividades leves e progressivas.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================== NOVOS CARDS COMEÇAM AQUI ================== -->
+
+    <!-- PORTUGUÊS – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Portuguese" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Português – Intermediário – Gramática aplicada, acentuação, estruturas frasais e interpretação crítica.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprofunde seus conhecimentos de gramática e análise textual com exercícios contextualizados.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CIÊNCIAS – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Science" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Ciências – Iniciante – Corpo humano, seres vivos e fenômenos naturais explicados de forma simples.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Introdução ao mundo científico com temas cotidianos e atividades práticas fáceis de realizar.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CIÊNCIAS – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Science+Lab" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Ciências – Intermediário – Energia, matéria, ecossistemas e experimentos guiados.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Explore fenômenos científicos através de conceitos mais estruturados e atividades investigativas.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BIOLOGIA – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Biology" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Biologia – Iniciante – Introdução à vida, células e diversidade dos seres vivos.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Conheça os conceitos fundamentais da biologia com explicações visuais e linguagem acessível.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BIOLOGIA – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Biology+Cells" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Biologia – Intermediário – Genética, reinos biológicos e ecossistemas.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprofunde conteúdos essenciais da biologia por meio de mapas mentais e exercícios estruturados.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISTÓRIA – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=History" class="course-img">
+
+            <div class="flex-fill">
+                <h5>História – Iniciante – Introdução aos povos antigos e primeiros registros humanos.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprenda como as primeiras civilizações se organizaram e influenciaram o mundo moderno.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISTÓRIA – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=History+Books" class="course-img">
+
+            <div class="flex-fill">
+                <h5>História – Intermediário – Idade Média, feudalismo e expansão marítima.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Explore períodos marcantes que moldaram a cultura, economia e política mundial.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INGLÊS – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=English" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Inglês – Iniciante – Vocabulário básico, saudações e frases do cotidiano.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Inicie seus estudos em inglês com frases simples, exercícios auditivos e diálogos cotidianos.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INGLÊS – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=English+Learning" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Inglês – Intermediário – Present simple, verbos, diálogos e compreensão auditiva.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprimore sua fluência com textos mais longos, diálogos guiados e exercícios gramaticais.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- REDAÇÃO – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Writing" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Redação – Iniciante – Estrutura básica do texto dissertativo e coesão textual.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprenda a montar textos claros, organizados e com boa estrutura argumentativa.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- REDAÇÃO – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Essay" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Redação – Intermediário – Argumentação, coesão avançada e estratégias de escrita.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprimore sua escrita com técnicas argumentativas e modelos práticos de desenvolvimento textual.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>    <!-- GEOGRAFIA – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Geography" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Geografia – Iniciante – Continentes, clima, relevo e mapas básicos.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprenda os conceitos fundamentais da geografia com mapas simples e exemplos do cotidiano.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GEOGRAFIA – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Geography+World" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Geografia – Intermediário – Geopolítica, economia global, urbanização e regionalização.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprofunde seu entendimento sobre organização territorial, relações internacionais e fatores socioeconômicos.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ARTES – INICIANTE -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Arts" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Artes – Iniciante – Formas, cores, expressão visual e história da arte introdutória.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Explore os primeiros conceitos artísticos através de atividades simples e estímulo à criatividade.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ARTES – INTERMEDIÁRIO -->
+    <div class="col-12">
+        <div class="card shadow-sm p-3 card-horizontal">
+            <img src="https://via.placeholder.com/300x200?text=Art+Studio" class="course-img">
+
+            <div class="flex-fill">
+                <h5>Artes – Intermediário – Técnicas de desenho, pintura, estilos artísticos e composição.</h5>
+                <p class="text-muted small">Fonte: google</p>
+                <span class="badge bg-success mb-2">Publicado</span>
+
+                <p>Aprimore suas habilidades artísticas com estudos de técnicas tradicionais e análise de estilos visuais.</p>
+
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cursoModal">
+                    Ver detalhes
+                </button>
+            </div>
+        </div>
+    </div>
+
