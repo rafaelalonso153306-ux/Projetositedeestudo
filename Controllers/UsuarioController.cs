@@ -87,24 +87,6 @@ namespace Projetositedeestudo.Controllers
             return RedirectToAction("Index");
         }
        
-        [Route("VerDetalhes/{id}")]
-        public IActionResult VerDetalhes(int id)
-        {
-            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == id);
-            ViewBag.Usuario = usuario;
-
-            return View(VerDetalhes);
-        }
-
-        private IActionResult View(Func<int, IActionResult> verDetalhes)
-        {
-            throw new NotImplementedException();
-        }
-
-        [Route("VerDetalhe")]
-        public IActionResult VerDetalhes(Curso curso)
-        {
-            return RedirectToAction("VerDetalhes");
-        }
+        
     }
 }

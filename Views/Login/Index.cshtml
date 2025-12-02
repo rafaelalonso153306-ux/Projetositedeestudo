@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%; border-radius: 20px;">
+        
+        <h2 class="text-center mb-4" style="font-size: 32px; font-weight: 700;">Entrar</h2>
+
+        <form method="post" action="/Login/Autenticar" aria-label="Formulário de Login">
+            <div class="mb-3">
+                <label for="email" class="form-label" style="font-size: 20px;">E-mail</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control form-control-lg"
+                       placeholder="Digite seu e-mail"
+                       required
+                       aria-required="true"
+                       style="font-size: 20px; padding: 12px;">
+            </div>
+
+            <div class="mb-4">
+                <label for="senha" class="form-label" style="font-size: 20px;">Senha</label>
+                <input type="password"
+                       id="senha"
+                       name="senha"
+                       class="form-control form-control-lg"
+                       placeholder="Digite sua senha"
+                       required
+                       aria-required="true"
+                       style="font-size: 20px; padding: 12px;">
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary w-100 py-3"
+                    style="font-size: 22px; font-weight: 600; border-radius: 15px;">
+                Acessar
+            </button>
+
+            <div class="text-center mt-3">
+                <a href="/Login/RecuperarSenha"
+                   style="font-size: 18px; text-decoration: none;">
+                    Esqueci minha senha
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>
