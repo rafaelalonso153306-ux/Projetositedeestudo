@@ -15,6 +15,7 @@ namespace Projetositedeestudo.Controllers
     public class UsuarioController : Controller
     {
         BancoDoProjetoContext context = new BancoDoProjetoContext();
+        private dynamic curso;
 
         public IActionResult Index()
         {
@@ -30,7 +31,7 @@ namespace Projetositedeestudo.Controllers
             var listaUsuarios = context.Usuarios.ToList();
             // passar a tela 
             ViewBag.listaUsuarios = listaUsuarios;
-            
+
             return View();
         }
 
@@ -68,11 +69,11 @@ namespace Projetositedeestudo.Controllers
         }
 
         [Route("Atualizar/{id}")]
-        public IActionResult Atualizar(int id)
+        public IActionResult Atualizar(int idUsuarios)
         {
-            Usuario usuario = context.Usuarios.FirstOrDefault(x => x.Id == id);
+            Usuario usuario = context.Usuarios.FirstOrDefault(x => x.Id == idUsuarios);
 
-            ViewBag.Usuario = usuario;
+            ViewBag.Usuarios = usuario;
 
             return View();
         }
@@ -84,6 +85,26 @@ namespace Projetositedeestudo.Controllers
             context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+       
+        [Route("VerDetalhes/{id}")]
+        public IActionResult VerDetalhes(int id)
+        {
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == id);
+            ViewBag.Usuario = usuario;
+
+            return View(VerDetalhes);
+        }
+
+        private IActionResult View(Func<int, IActionResult> verDetalhes)
+        {
+            throw new NotImplementedException();
+        }
+
+        [Route("VerDetalhe")]
+        public IActionResult VerDetalhes(Curso curso)
+        {
+            return RedirectToAction("VerDetalhes");
         }
     }
 }
