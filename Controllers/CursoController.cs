@@ -18,7 +18,7 @@ namespace Projetositedeestudo.Controllers
 
         public IActionResult Index()
         {
-            var listaCursos = context.Cursos.ToList();
+            List<Curso> listaCursos = context.Cursos.ToList();
 
             ViewBag.ListaCursos = listaCursos;
 
@@ -26,23 +26,21 @@ namespace Projetositedeestudo.Controllers
         }
     
     
-        [Route("CursoDetalhes/")]
+          // MOSTRA A TELA DE DETALHES
+        [HttpGet("CursoDetalhes/{id}")]
         public IActionResult CursoDetalhes(int id)
         {
-           Curso curso = context.Cursos.FirstOrDefault(x => x.Id == id);
-
+            var curso = context.Cursos.FirstOrDefault(x => x.Id == id);
             ViewBag.Cursos = curso;
-
             return View();
         }
 
-        [Route("CursoDetalhes")]
+        // SALVA ALTERAÇÕES
+        [HttpPost("CursoDetalhes")]
         public IActionResult CursoDetalhes(Curso curso)
         {
             context.Cursos.Update(curso);
-
             context.SaveChanges();
-            
             return RedirectToAction("Index");
         }
     }
