@@ -149,5 +149,15 @@ public partial class BancoDoProjetoContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
+    internal void Remove(Usuario usuario)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void SaveChanges()
+    {
+        throw new NotImplementedException();
+    }
+
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
