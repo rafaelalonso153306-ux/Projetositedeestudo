@@ -11,7 +11,7 @@ public partial class MateriaUsuario
 
     public int? MateriaId { get; set; }
 
-    public virtual Materia? Materia { get; set; }
+    public virtual Materium? Materia { get; set; }
 
     public virtual Usuario? Usuario { get; set; }
 }
