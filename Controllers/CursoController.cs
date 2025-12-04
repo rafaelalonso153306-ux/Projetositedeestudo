@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Projetositedeestudo.Contexts;
 using Projetositedeestudo.Models;
 
@@ -25,13 +19,18 @@ namespace Projetositedeestudo.Controllers
             return View();
         }
     
-    
           // MOSTRA A TELA DE DETALHES
         [HttpGet("CursoDetalhes/{id}")]
         public IActionResult CursoDetalhes(int id)
         {
             var curso = context.Cursos.FirstOrDefault(x => x.Id == id);
             ViewBag.Cursos = curso;
+
+
+            // Lista de materias do curso
+            var conteudo = context.Conteudos.Where(x => x.CursoId == id).ToList();
+            ViewBag.ListaConteudos = conteudo;
+
             return View();
         }
 

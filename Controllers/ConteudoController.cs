@@ -1,13 +1,6 @@
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Projetositedeestudo.Contexts;
+using Projetositedeestudo.Models;
 
 namespace Projetositedeestudo.Controllers
 {
@@ -18,7 +11,8 @@ namespace Projetositedeestudo.Controllers
         
         public IActionResult Index()
         {
-            var lista = _context.Conteudos.Include(c => c.Curso).ToList();
+            var lista = _context.Conteudos.ToList();
+            // var lista = _context.Conteudos.Include(c => c.Curso).ToList();
 
             ViewBag.ListaConteudos = lista;
 

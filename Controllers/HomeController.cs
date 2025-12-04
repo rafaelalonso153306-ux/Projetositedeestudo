@@ -1,6 +1,7 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Projetositedeestudo.Contexts;
 using Projetositedeestudo.Models;
+
 
 namespace Projetositedeestudo.Controllers;
 
@@ -12,10 +13,8 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-        //vai corinthians
-     
-     //Vai Corinthians//
-    public IActionResult Index()
+       
+        public IActionResult Index()
     {
         return View();
     }

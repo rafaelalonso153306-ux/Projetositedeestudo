@@ -17,7 +17,9 @@ public partial class Curso
 
     public int? MateriaId { get; set; }
 
+    public string? Imagem { get; set; }
+
     public virtual ICollection<Conteudo> Conteudos { get; set; } = new List<Conteudo>();
 
-    public virtual Materia? Materia { get; set; }
+    public virtual Materium? Materia { get; set; }
 }

@@ -1,23 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Projetositedeestudo.Contexts;
+using Projetositedeestudo.Models;
 
 namespace Projetositedeestudo.Controllers
 {
     [Route("[controller]")]
     public class MateriaUsuarioController : Controller
     {
-        private readonly ILogger<MateriaUsuarioController> _logger;
-
-        public MateriaUsuarioController(ILogger<MateriaUsuarioController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
