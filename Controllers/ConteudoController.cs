@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Projetositedeestudo.Contexts;
 using Projetositedeestudo.Models;
 
@@ -12,7 +13,7 @@ namespace Projetositedeestudo.Controllers
         public IActionResult Index()
         {
             var lista = _context.Conteudos.ToList();
-            // var lista = _context.Conteudos.Include(c => c.Curso).ToList();
+            var lista = _context.Conteudos.Include(c => c.Curso).ToList();
 
             ViewBag.ListaConteudos = lista;
 
