@@ -7,9 +7,9 @@ public partial class Conteudo
 {
     public int Id { get; set; }
 
-    public int? CursoId { get; set; }
-
     public string? Nome { get; set; }
+
+    public int? CursoId { get; set; }
 
     public virtual ICollection<Atividade> Atividades { get; set; } = new List<Atividade>();
 
