@@ -7,11 +7,11 @@ public partial class Atividade
 {
     public int Id { get; set; }
 
+    public double? Nota { get; set; }
+
     public int? UsuarioId { get; set; }
 
     public int? ConteudoId { get; set; }
-
-    public double? Nota { get; set; }
 
     public virtual Conteudo? Conteudo { get; set; }
 
