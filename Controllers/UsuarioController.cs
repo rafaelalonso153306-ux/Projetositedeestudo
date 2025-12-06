@@ -6,8 +6,8 @@ namespace Projetositedeestudo.Controllers
     [Route("[controller]")]
     public class UsuarioController : Controller
     {
-        BancoDoProjetoContext context = new BancoDoProjetoContext();
-        private dynamic curso;
+        readonly BancoDoProjetoContext context = new BancoDoProjetoContext();
+        private readonly dynamic curso;
 
         public IActionResult Index()
         {

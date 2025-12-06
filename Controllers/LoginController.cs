@@ -8,7 +8,7 @@ namespace Projetositedeestudo.Controllers
     [Route("[controller]")]
     public class LoginController : Controller
     {
-        BancoDoProjetoContext context = new BancoDoProjetoContext();
+        readonly BancoDoProjetoContext context = new BancoDoProjetoContext();
 
         public IActionResult Index()
         {

@@ -1,91 +1,108 @@
-<!-- Cabeçalho -->
-<header class="bg-light text-center py-5 shadow-sm mb-4">
-  <h1 class="mb-2">Escolha o nível de dificuldade:</h1>
-  <p>Selecione o nível de dificuldade para ver as matérias e atividades.</p>
-</header>
 
-<!-- Botões dos anos -->
-<section class="container text-center mb-4">
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <button class="btn btn-outline-primary btn-lg px-3 py-1 active" onclick="filtrarCursos('Iniciante', this)">Iniciante</button>
-    <button class="btn btn-outline-primary btn-lg px-3 py-1" onclick="filtrarCursos('Intermediário', this)">Intermediário</button>
-    <button class="btn btn-outline-primary btn-lg px-3 py-1" onclick="filtrarCursos('Todos', this)">Ver todos</button>
-  </div>
-</section>
+        <!-- Cabeçalho -->
+        <header class="bg-light text-center py-5 shadow-sm mb-4">
+            <h1 class="mb-2">Escolha o nível de dificuldade:</h1>
+            <p>Selecione o nível de dificuldade para ver as matérias e atividades.</p>
+        </header>
 
-<!-- LISTA DE CURSOS -->
-<div class="container">
-  <div class="row g-3">
-    @foreach(Curso curso in ViewBag.ListaCursos)
-    {
-      <div class="col-12 col-md-6 curso-card" data-nivel="@curso.NivelDificuldade">
-        <div class="card shadow-sm p-3 card-horizontal">
-          <img src="./imagem/@curso.Imagem" class="course-img">
+        <!-- Botões dos níveis -->
+        <section class="container text-center mb-4">
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <button class="btn btn-outline-primary btn-lg px-3 py-1 active" onclick="filtrarCursos('Iniciante', this)">Iniciante</button>
+                <button class="btn btn-outline-primary btn-lg px-3 py-1" onclick="filtrarCursos('Intermediário', this)">Intermediário</button>
+                <button class="btn btn-outline-primary btn-lg px-3 py-1" onclick="filtrarCursos('Todos', this)">Ver todos</button>
+            </div>
+        </section>
 
-          <div class="flex-fill">
-            <h3>@curso.Titulo</h3>
-            <h5>@curso.NivelDificuldade</h5>
-            <p>@curso.Descricao</p>
-            <a href="Curso/CursoDetalhes/@curso.Id" class="btn btn-primary btn-sm">Ver detalhes</a>
-          </div>
+        <!-- LISTA DE CURSOS -->
+        <div class="container">
+            <div class="row g-3">
+                @foreach(Curso curso in ViewBag.ListaCursos)
+                {
+                    // Filtra cursos iniciante que contenham "intermediário" no título
+                    bool exibirCurso = true;
+                    if (curso.NivelDificuldade == "Iniciante" && curso.Titulo.ToLower().Contains("intermediário"))
+                    {
+                        exibirCurso = false;
+                    }
+
+                    if (exibirCurso)
+                    {
+                        <div class="col-12 col-md-6 curso-card" data-nivel="@curso.NivelDificuldade">
+                            <div class="card shadow-sm p-3 card-horizontal">
+                                <img src="./imagem/@curso.Imagem" class="course-img">
+                                <div class="flex-fill">
+                                    <h3>@curso.Titulo</h3>
+                                    <h5>@curso.NivelDificuldade</h5>
+                                    <p>@curso.Descricao</p>
+                                    <a href="Curso/CursoDetalhes/@curso.Id" class="btn btn-primary btn-sm">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
         </div>
-      </div>
-    }
-  </div>
-</div>
 
-<!-- CSS -->
-<style>
-/* Cabeçalho */
-header {
-    border-radius: 8px; /* cantos arredondados */
-    margin-bottom: 30px; /* espaçamento maior em relação aos botões */
-}
+        <!-- CSS -->
+        <style>
+            /* Cabeçalho */
+            header {
+                border-radius: 8px;
+                margin-bottom: 30px;
+            }
 
-/* Card horizontal */
-.card-horizontal {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    transition: all 0.3s ease;
-}
+            /* Card horizontal */
+            .card-horizontal {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                transition: all 0.3s ease;
+            }
 
-/* Imagem do curso */
-.course-img {
-    width: 180px;       /* imagem maior e proporcional */
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
+            /* Imagem do curso */
+            .course-img {
+                width: 180px;
+                height: auto;
+                object-fit: cover;
+                border-radius: 8px;
+            }
 
-/* Card individual */
-.curso-card {
-    transition: all 0.3s ease;
-}
+            /* Card individual */
+            .curso-card {
+                transition: all 0.3s ease;
+            }
 
-/* Botão ativo */
-.btn.active {
-    background-color: #0d6efd;
-    color: white;
-}
-</style>
+            /* Botão ativo */
+            .btn.active {
+                background-color: #0d6efd;
+                color: white;
+            }
+        </style>
 
-<!-- JavaScript -->
-<script>
-function filtrarCursos(nivel, btn) {
-    const cards = document.querySelectorAll(".curso-card");
+        <!-- JavaScript -->
+        <script>
+            function filtrarCursos(nivel, btn) {
+                const cards = document.querySelectorAll(".curso-card");
 
-    cards.forEach(card => {
-        const cardNivel = card.getAttribute("data-nivel").toLowerCase();
-        if (nivel.toLowerCase() === "todos" || cardNivel === nivel.toLowerCase()) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
+                cards.forEach(card => {
+                    const cardNivel = card.getAttribute("data-nivel").toLowerCase();
+                    if (nivel.toLowerCase() === "todos" || cardNivel === nivel.toLowerCase()) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
 
-    // Botão ativo
-    document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-}
-</script>
+                // Botão ativo
+                document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        </script>
+    </main>
+
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js"></script>
+</html>

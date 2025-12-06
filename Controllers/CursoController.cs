@@ -7,7 +7,7 @@ namespace Projetositedeestudo.Controllers
     [Route("[controller]")]
     public class CursoController : Controller
     {
-        BancoDoProjetoContext context = new BancoDoProjetoContext();
+        readonly BancoDoProjetoContext context = new BancoDoProjetoContext();
 
 
         public IActionResult Index()

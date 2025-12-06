@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Projetositedeestudo.Models;
-
-public partial class Conteudo
+﻿namespace Projetositedeestudo.Models
 {
-    public int Id { get; set; }
+    public partial class Conteudo
+    {
+        public int Id { get; set; }
 
-    public string? Nome { get; set; }
+        public int? CursoId { get; set; }
 
-    public int? CursoId { get; set; }
+        public string? Nome { get; set; }
 
-    public virtual ICollection<Atividade> Atividades { get; set; } = new List<Atividade>();
+        public virtual ICollection<Atividade> Atividades { get; set; } = [];
 
-    public virtual Curso? Curso { get; set; }
+        public virtual Curso? Curso { get; set; }
+    }
 }
