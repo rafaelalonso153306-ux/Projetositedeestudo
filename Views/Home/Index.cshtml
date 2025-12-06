@@ -1,8 +1,67 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@{ ViewData["Title"] = "Home Page"; }
 
-<div class="text-center">
-    <h1 class="display-4">Bem Vindo ao seu site de estudos!</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- BANNER PRINCIPAL -->
+<div class="bg-primary text-white text-center py-4 shadow-sm rounded mb-4">
+    <h1 class="fw-bold mb-2" style="font-size: 2rem;">📚 Bem-vindo ao seu Site de Estudos!</h1>
+    <p class="lead mb-3" style="font-size: 1.1rem;">
+        Aprenda no seu ritmo com conteúdos acessíveis e pensados especialmente para você.
+    </p>
+    <a href="/Curso" class="btn btn-light btn-lg fw-semibold px-4 py-2" style="font-size: 1rem;">
+        Começar Agora 🚀
+    </a>
+</div>
+
+<!-- SESSÃO DE CURSOS EM DESTAQUE -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4 fw-bold" style="font-size: 1.8rem;">Cursos em Destaque</h2>
+
+    <div class="row g-4">
+
+        <!-- CARD 1 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title" style="font-size: 1.2rem;">🔢 Matemática Básica</h5>
+                    <p class="card-text flex-grow-1" style="font-size: 0.95rem;">Aprenda operações essenciais como soma, subtração, multiplicação e divisão.</p>
+                    <a href="/Curso" class="btn btn-primary w-100 mt-2" style="font-size: 0.95rem;">Ver Curso</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title" style="font-size: 1.2rem;">📖 Português – Leitura</h5>
+                    <p class="card-text flex-grow-1" style="font-size: 0.95rem;">Desenvolva suas habilidades de interpretação e compreensão de textos.</p>
+                    <a href="/Curso" class="btn btn-primary w-100 mt-2" style="font-size: 0.95rem;">Ver Curso</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title" style="font-size: 1.2rem;">🌎 Geografia Básica</h5>
+                    <p class="card-text flex-grow-1" style="font-size: 0.95rem;">Explore mapas, paisagens e regiões do Brasil de forma simples e visual.</p>
+                    <a href="/Curso" class="btn btn-primary w-100 mt-2" style="font-size: 0.95rem;">Ver Curso</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SESSÃO SOBRE O SITE -->
+<div class="container my-5">
+    <div class="p-4 bg-light rounded shadow-sm">
+        <h2 class="fw-bold mb-3" style="font-size: 1.8rem;">Sobre o Projeto</h2>
+        <p class="lead" style="font-size: 1rem; line-height: 1.5;">
+            Nosso site foi criado para oferecer conteúdos educativos acessíveis, especialmente para pessoas com 
+            <strong>deficiência cognitiva</strong>. Todos os cursos são desenvolvidos para facilitar a compreensão, com linguagem simples, ilustrações, exercícios práticos e navegação intuitiva. 
+            Além disso, oferecemos ferramentas de acompanhamento de progresso, quizzes interativos e recursos visuais para tornar o aprendizado mais eficiente e divertido.
+        </p>
+        <a href="/Usuario" class="btn btn-secondary btn-lg mt-3 px-4 py-2" style="font-size: 1rem;">Criar Conta 📝</a>
+    </div>
 </div>
