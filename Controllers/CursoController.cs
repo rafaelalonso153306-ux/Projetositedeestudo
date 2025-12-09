@@ -18,8 +18,8 @@ namespace Projetositedeestudo.Controllers
 
             return View();
         }
-    
-          // MOSTRA A TELA DE DETALHES
+
+        // MOSTRA A TELA DE DETALHES
         [HttpGet("CursoDetalhes/{id}")]
         public IActionResult CursoDetalhes(int id)
         {
