@@ -1,0 +1,28 @@
+@page
+@using Projetositedeestudo.Views.Curso
+
+<h1>Vamos Começar!</h1>
+
+<form method="post" asp-action="Atividades" asp-controller="Atividades">
+
+    <input type="hidden" name="Id" value="@ViewBag.Atuvidades.Id" />
+
+   
+
+   
+    <!-- BIOLOGIA – INTERMEDIÁRIO -->
+    @foreach(Atividades atividades in ViewBag.ListaAtividades)
+    {
+        <div class="col-6">
+            <div class="card shadow-sm p-3 card-horizontal">
+               
+                <div class="flex-fill">
+                    
+                    <h3>@atividades.Titulo</h3>
+                </div>
+            </div>
+        </div>
+    }
+
+    <a href="/Curso" class="btn btn-secondary ms-2">Voltar</a>
+</form>

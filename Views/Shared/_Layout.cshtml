@@ -6,49 +6,119 @@
     <title>@ViewData["Title"] - Projeto site de estudo</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Acessibilidade Cognitiva: cores suaves, fontes maiores -->
+    <style>
+        body {
+            font-size: 1.15rem;
+            background-color: #f7f9fc;
+        }
+        .navbar {
+            background-color: #ffffff !important;
+            border-bottom: 3px solid #d9e7ff;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #375a7f !important;
+        }
+        .nav-link {
+            padding: 12px 18px !important;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            background-color: #d9e7ff;
+        }
+        header, footer {
+            padding: 12px;
+        }
+        footer {
+            font-size: 1.1rem;
+            background-color: #eef4ff;
+            padding: 20px 0;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Projetositedeestudo.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Projeto site de estudo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    Projeto site de estudo
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="navbar-collapse collapse justify-content-end mt-2 mt-lg-0">
+                    <ul class="navbar-nav align-items-center gap-2">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
+                                Home
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark fw-semibold" asp-area=""
+                               asp-controller="Home" asp-action="Privacy">
+                                Privacidade
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Cadastre-se</a>
+                            <a class="nav-link text-dark fw-semibold" asp-area=""
+                               asp-controller="Usuario" asp-action="Index">
+                                Cadastre-se
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Curso" asp-action="Index">Cursos</a>
+                            <a class="nav-link text-dark fw-semibold" asp-area=""
+                               asp-controller="Curso" asp-action="Index">
+                                Cursos
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                            <a class="nav-link text-dark fw-semibold" asp-area=""
+                               asp-controller="Login" asp-action="Index">
+                                Login
+                            </a>
                         </li>
+
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
 
-    <footer class="border-top footer text-muted">
+    <main role="main" class="pb-3 container">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted text-center mt-4">
         <div class="container">
-            &copy; 2025 - Projeto site de estudo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - Projeto site de estudo -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="fw-semibold">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
