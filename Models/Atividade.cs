@@ -15,6 +15,7 @@ public partial class Atividade
 
     public int ConteudoId { get; set; }
 
+<<<<<<< HEAD
     public string? Status { get; set; }
 
     public DateTime? DataConclusao { get; set; }
@@ -25,3 +26,7 @@ public partial class Atividade
 
     public virtual Usuario Usuario { get; set; } = null!;
 }
+=======
+    public virtual Usuario? Usuario { get; set; }
+}
+>>>>>>> c6934cb2cc39ab4515a1ea79937d9d760033f168
