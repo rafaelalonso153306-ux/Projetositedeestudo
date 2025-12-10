@@ -61,14 +61,15 @@ namespace Projetositedeestudo.Controllers
         }
 
         [Route("Atualizar/{id}")]
-        public IActionResult Atualizar(int idUsuarios)
+        public IActionResult Atualizar(int id)
         {
-            Usuario usuario = context.Usuarios.FirstOrDefault(x => x.Id == idUsuarios);
+            var usuario = context.Usuarios.FirstOrDefault(x => x.Id == id);
 
             ViewBag.Usuarios = usuario;
 
             return View();
         }
+
         [Route("AtualizarUsuario")]
         public IActionResult AtualizarUsuario(Usuario usuario)
         {

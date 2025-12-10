@@ -7,9 +7,11 @@ public partial class Materium
 {
     public int Id { get; set; }
 
-    public string? Nome { get; set; }
+    public string Titulo { get; set; } = null!;
+
+    public string? Descricao { get; set; }
+
+    public string? Imagem { get; set; }
 
     public virtual ICollection<Curso> Cursos { get; set; } = new List<Curso>();
-
-    public virtual ICollection<MateriaUsuario> MateriaUsuarios { get; set; } = new List<MateriaUsuario>();
 }

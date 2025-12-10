@@ -1,22 +1,52 @@
 @page
+<div class="container mt-4">
 
+    <!-- Título acessível e amigável -->
+    <h1 class="text-center mb-4 fw-bold" style="font-size: 2rem;">
+        ✏️ Atualizar Usuário
+    </h1>
 
-<div>
-    <h1>Tela de Atualizar Usuario</h1>
-        @* Formulário de cadastro de equipe *@
-    <form method="PUT" asp-action="AtualizarUsuario" asp-controller="Usuario">
-        <input type="hidden" name="Id" value="@ViewBag.Usuarios.Nome">
+    <div class="card shadow p-4" style="border-radius: 20px;">
+        <form method="post" asp-action="AtualizarUsuario" asp-controller="Usuario">
 
-        <div class="form-control">
-            <label for="nome">Nome do Usuario</label>
-            <input type="text" name="Nome" value="@ViewBag.Usuarios.Nome">
-        </div>
+            <!-- ID escondido -->
+            <input type="hidden" name="Id" value="@ViewBag.Usuarios.Id" />
 
-        <div class="form-control">
-            <label for="Email">Email do Usuario</label>
-             <input type="text" name="Email" value="@ViewBag.Usuarios.Nome">
-        </div>
+            <!-- Nome -->
+            <div class="mb-3">
+                <label class="form-label fs-5 fw-semibold">👤 Nome do Usuário</label>
+                <input type="text"
+                       name="Nome"
+                       class="form-control form-control-lg"
+                       style="border-radius: 12px;"
+                       value="@ViewBag.Usuarios.Nome"
+                       required />
+            </div>
 
-        <button class="btn btn-primary">Atualizar</button>
-    </form>
-</div>    
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label fs-5 fw-semibold">📧 Email</label>
+                <input type="email"
+                       name="Email"
+                       class="form-control form-control-lg"
+                       style="border-radius: 12px;"
+                       value="@ViewBag.Usuarios.Email"
+                       required />
+            </div>
+
+            <!-- Botões grandes e claros -->
+            <div class="d-flex gap-3 mt-4">
+                <button class="btn btn-primary btn-lg w-50"
+                        style="border-radius: 12px;">
+                    💾 Salvar Alterações
+                </button>
+
+                <a href="/Usuario" 
+                   class="btn btn-secondary btn-lg w-50"
+                   style="border-radius: 12px;">
+                    ↩️ Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

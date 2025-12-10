@@ -6,6 +6,13 @@
     <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%; border-radius: 20px;">
         
         <h2 class="text-center mb-4" style="font-size: 32px; font-weight: 700;">Entrar</h2>
+        @if(ViewBag.Erro != null)
+{
+    <div class="alert alert-danger text-center" style="font-size: 20px;">
+        @ViewBag.Erro
+    </div>
+}
+
 
         <form method="post" action="/Login/Autenticar" aria-label="Formulário de Login">
             <div class="mb-3">

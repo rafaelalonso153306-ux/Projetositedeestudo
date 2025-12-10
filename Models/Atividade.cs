@@ -7,13 +7,21 @@ public partial class Atividade
 {
     public int Id { get; set; }
 
-    public double? Nota { get; set; }
+    public string Titulo { get; set; } = null!;
 
-    public int? UsuarioId { get; set; }
+    public string? Descricao { get; set; }
 
-    public int? ConteudoId { get; set; }
+    public int UsuarioId { get; set; }
 
-    public virtual Conteudo? Conteudo { get; set; }
+    public int ConteudoId { get; set; }
 
-    public virtual Usuario? Usuario { get; set; }
+    public string? Status { get; set; }
+
+    public DateTime? DataConclusao { get; set; }
+
+    public virtual ICollection<AtividadesUsuario> AtividadesUsuarios { get; set; } = new List<AtividadesUsuario>();
+
+    public virtual Conteudo Conteudo { get; set; } = null!;
+
+    public virtual Usuario Usuario { get; set; } = null!;
 }

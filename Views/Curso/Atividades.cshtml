@@ -5,24 +5,32 @@
 
 <form method="post" asp-action="Atividades" asp-controller="Atividades">
 
-    <input type="hidden" name="Id" value="@ViewBag.Atuvidades.Id" />
+  <input type="hidden" name="Id" value="@ViewBag.Atividades?.Id" />
+
 
    
 
    
     <!-- BIOLOGIA – INTERMEDIÁRIO -->
-    @foreach(Atividades atividades in ViewBag.ListaAtividades)
+   @foreach(Projetositedeestudo.Models.Atividade atividades in ViewBag.ListaAtividades)
+
     {
         <div class="col-6">
             <div class="card shadow-sm p-3 card-horizontal">
                
                 <div class="flex-fill">
                     
-                    <h3>@atividades.Titulo</h3>
+                    <h3>@atividades.Id</h3>
+                    
+                            <a href="/Atividade/Index/@atividades.Id"
+                               class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3"
+                               style="font-size: 1.5rem;">
+                                Começar Atividade
+                            </a>
                 </div>
             </div>
         </div>
     }
 
-    <a href="/Curso" class="btn btn-secondary ms-2">Voltar</a>
+    <a href="/CursoDetalhes" class="btn btn-secondary ms-2">Voltar</a>
 </form>

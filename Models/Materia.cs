@@ -6,6 +6,5 @@
         public string? Nome { get; set; }
 
         public virtual ICollection<Curso> Cursos { get; set; } = [];
-        public virtual ICollection<MateriaUsuario> MateriaUsuarios { get; set; } = [];
     }
 }
