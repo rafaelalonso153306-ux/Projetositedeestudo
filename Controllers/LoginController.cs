@@ -31,7 +31,9 @@ namespace Projetositedeestudo.Controllers
 
             // Salva o usuário na sessão
             HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
-            HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
+            HttpContext.Session.SetString("UsuarioId", usuario.Id.ToString());
+
+            // HttpContext.Session.GetInt32("UsuarioId");
 
             return RedirectToAction("Index", "Home");
         }

@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Projeto site de estudo</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Acesso 21</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <!-- Acessibilidade Cognitiva: cores suaves, fontes maiores -->
+    <!-- ESTILO DO SEU SITE + LOGO "ACESSO 21" -->
     <style>
         body {
             font-size: 1.15rem;
@@ -16,11 +15,6 @@
         .navbar {
             background-color: #ffffff !important;
             border-bottom: 3px solid #d9e7ff;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: #375a7f !important;
         }
         .nav-link {
             padding: 12px 18px !important;
@@ -42,6 +36,19 @@
         main {
             padding: 20px;
         }
+
+        /* Logo Cores e Estilos */
+        :root{
+            --acesso-blue-1: #0057B8;
+            --acesso-blue-2: #4DA3FF;
+            --acesso-accent: #FFD100;
+            --acesso-text: #0A2433;
+        }
+        .logo-emblem { height: 42px; width: 42px; border-radius: 8px; }
+        .brand-text { font-family: "Poppins", Arial, sans-serif; line-height: 1; }
+         media (max-width: 576px){
+            .brand-text { display:none; }
+        }
     </style>
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -49,79 +56,90 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg shadow-sm">
-            <div class="container-fluid">
+<header>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    Projeto site de estudo
-                </a>
+            <!-- LOGO COMPLETO ACESSO 21 -->
+            <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <!-- Ícone do logo -->
+                <svg class="logo-emblem" viewBox="0 0 200 200" aria-label="Acesso 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="98" fill="#FFFFFF" stroke="var(--acesso-blue-1)" stroke-width="6"/>
+                    <g transform="translate(50,40)">
+                        <ellipse cx="30" cy="50" rx="20" ry="32" fill="var(--acesso-blue-1)"/>
+                        <ellipse cx="90" cy="50" rx="20" ry="32" fill="var(--acesso-blue-2)"/>
+                        <rect x="50" y="28" width="24" height="44" rx="12" ry="12" fill="#2B7CED"/>
+                        <text x="60" y="100" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="var(--acesso-text)">21</text>
+                    </g>
+                </svg>
 
-                <div class="navbar-collapse collapse justify-content-end mt-2 mt-lg-0">
-                    <ul class="navbar-nav align-items-center gap-2">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">
-                                Home
-                            </a>
-                        </li>
-
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark fw-semibold" asp-area=""
-                               asp-controller="Home" asp-action="Privacy">
-                                Privacidade
-                            </a> *@
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-semibold" asp-area=""
-                               asp-controller="Usuario" asp-action="Index">
-                                Cadastre-se
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-semibold" asp-area=""
-                               asp-controller="Curso" asp-action="Index">
-                                Cursos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark fw-semibold" asp-area=""
-                               asp-controller="Login" asp-action="Index">
-                                Login
-                            </a>
-                        </li>
-
-                    </ul>
+                <!-- Texto do logo -->
+                <div class="brand-text">
+                    <span style="font-size:1rem; color:var(--acesso-text); font-weight:600;">acesso</span><br />
+                    <span style="font-size:1.25rem; color:var(--acesso-blue-1); font-weight:700;">21</span>
                 </div>
+            </a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse justify-content-end mt-2 mt-lg-0">
+                <ul class="navbar-nav align-items-center gap-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" asp-controller="Usuario" asp-action="Index">Cadastre-se</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" asp-controller="Curso" asp-action="Index">Cursos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-semibold" asp-controller="Login" asp-action="Index">Login</a>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-    </header>
 
-    <main role="main" class="pb-3 container">
-        @RenderBody()
-    </main>
-
-    <footer class="border-top footer text-muted text-center mt-4">
-        <div class="container">
-            &copy; 2025 - Projeto site de estudo -
-            @* <a asp-area="" asp-controller="Home" asp-action="Privacy" class="fw-semibold">Privacy</a> *@
         </div>
-    </footer>
+    </nav>
+</header>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<main role="main" class="pb-3 container">
+    @RenderBody()
+</main>
+
+<footer class="border-top text-muted text-center">
+    <div class="container d-flex flex-column align-items-center gap-2 py-3">
+
+        <div class="d-flex align-items-center">
+            <div class="logo-emblem d-flex justify-content-center align-items-center fw-bold"
+                 style="background: linear-gradient(135deg, var(--acesso-blue-1), var(--acesso-blue-2)); color: white;">
+                21
+            </div>
+
+            <span class="brand-text ms-2 fw-bold" style="color: var(--acesso-text);">
+                Acesso 21
+            </span>
+        </div>
+
+        @* <span>&copy; 2025 - Acesso 21</span> *@
+    </div>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
