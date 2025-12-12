@@ -3,34 +3,42 @@
 
 <h1>Vamos Começar!</h1>
 
-<form method="post" asp-action="Atividades" asp-controller="Atividades">
+@* <form method="post" asp-action="Atividades" asp-controller="Atividades"> *@
 
-  <input type="hidden" name="Id" value="@ViewBag.Atividades?.Id" />
+<input type="hidden" name="Id" value="@ViewBag.Atividades?.Id" />
 
 
-   
+<!-- BIOLOGIA – INTERMEDIÁRIO -->
+@foreach (Projetositedeestudo.Models.Atividade atividades in ViewBag.ListaAtividades)
 
-   
-    <!-- BIOLOGIA – INTERMEDIÁRIO -->
-   @foreach(Projetositedeestudo.Models.Atividade atividades in ViewBag.ListaAtividades)
+{
+    <div class="col-6">
+        <div class="card shadow-sm p-3 card-horizontal">
 
-    {
-        <div class="col-6">
-            <div class="card shadow-sm p-3 card-horizontal">
-               
-                <div class="flex-fill">
-                    
-                    <h3>@atividades.Id</h3>
-                    
-                            <a href="/Atividade/Index/@atividades.Id"
-                               class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3"
-                               style="font-size: 1.5rem;">
-                                Começar Atividade
-                            </a>
-                </div>
+            <div class="flex-fill">
+
+                <h3>@atividades.Id</h3>
+
+                @* <a href="/Atividade/Vincular/@atividades.Id" class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3" *@
+                <button onclick="vincularAtividade(@atividades.Id)" class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3"
+                    style="font-size: 1.5rem;">
+                    Começar Atividade
+                </button>
             </div>
         </div>
+    </div>
+}
+
+<a href="/CursoDetalhes" class="btn btn-secondary ms-2">Voltar</a>
+@* </form> *@
+
+<script>
+    function vincularAtividade(ativiade)
+    {
+        fetch("/atividade/Vincular", {
+            method : "POST",
+            body: JSON.stringify({ atividade: atividade }),
+        })
     }
 
-    <a href="/CursoDetalhes" class="btn btn-secondary ms-2">Voltar</a>
-</form>
+</script>

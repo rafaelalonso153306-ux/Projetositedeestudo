@@ -3,20 +3,29 @@
 }
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%; border-radius: 20px;">
-        
-        <h2 class="text-center mb-4" style="font-size: 32px; font-weight: 700;">Entrar</h2>
-        @if(ViewBag.Erro != null)
-{
-    <div class="alert alert-danger text-center" style="font-size: 20px;">
-        @ViewBag.Erro
-    </div>
-}
+    <div class="card shadow-lg p-4 border-0" style="max-width: 450px; width: 100%; border-radius: 25px; background-color: #f9fbff;">
 
+        <h2 class="text-center mb-4" style="font-size: 36px; font-weight: 800; color: #003d82;">
+            👋 Bem-vindo!
+        </h2>
+
+        @if (ViewBag.Erro != null)
+        {
+            <div class="alert alert-danger text-center" style="font-size: 22px; border-radius: 15px;">
+                ⚠️ @ViewBag.Erro
+            </div>
+        }
 
         <form method="post" action="/Login/Autenticar" aria-label="Formulário de Login">
-            <div class="mb-3">
-                <label for="email" class="form-label" style="font-size: 20px;">E-mail</label>
+
+            <!-- E-mail -->
+            <div class="mb-4">
+                <label for="email"
+                       class="form-label fw-bold"
+                       style="font-size: 22px;">
+                    📧 E-mail
+                </label>
+
                 <input type="email"
                        id="email"
                        name="email"
@@ -24,11 +33,17 @@
                        placeholder="Digite seu e-mail"
                        required
                        aria-required="true"
-                       style="font-size: 20px; padding: 12px;">
+                       style="font-size: 22px; padding: 15px; border-radius: 15px;">
             </div>
 
+            <!-- Senha -->
             <div class="mb-4">
-                <label for="senha" class="form-label" style="font-size: 20px;">Senha</label>
+                <label for="senha"
+                       class="form-label fw-bold"
+                       style="font-size: 22px;">
+                    🔑 Senha
+                </label>
+
                 <input type="password"
                        id="senha"
                        name="senha"
@@ -36,22 +51,34 @@
                        placeholder="Digite sua senha"
                        required
                        aria-required="true"
-                       style="font-size: 20px; padding: 12px;">
+                       style="font-size: 22px; padding: 15px; border-radius: 15px;">
             </div>
 
+            <!-- Botão Acessar -->
             <button type="submit"
-                    class="btn btn-primary w-100 py-3"
-                    style="font-size: 22px; font-weight: 600; border-radius: 15px;">
-                Acessar
+                    class="btn w-100 py-3 fw-bold"
+                    style="font-size: 26px; border-radius: 20px; background-color: #0057d9; color: white;">
+                👉 Acessar
             </button>
 
-            <div class="text-center mt-3">
+            <!-- Link: Esqueci minha senha -->
+            <div class="text-center mt-4">
                 <a href="/Login/RecuperarSenha"
-                   style="font-size: 18px; text-decoration: none;">
-                    Esqueci minha senha
+                   class="fw-bold"
+                   style="font-size: 20px; text-decoration: none; color: #0057d9;">
+                    🔄 Esqueci minha senha
                 </a>
             </div>
-        </form>
 
+            <!-- Link: Criar conta -->
+            <div class="text-center mt-3">
+                <a href="/Login/Cadastrar"
+                   class="fw-bold"
+                   style="font-size: 22px; text-decoration: none; color: #008f3f;">
+                    ➕ Criar nova conta
+                </a>
+            </div>
+
+        </form>
     </div>
 </div>

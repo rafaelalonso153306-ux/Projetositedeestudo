@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Projetositedeestudo.Contexts;
+using Projetositedeestudo.Models;
 
 namespace Projetositedeestudo.Controllers
 {
@@ -16,6 +17,22 @@ namespace Projetositedeestudo.Controllers
             ViewBag.ListaAtividades = lista;
 
             return View();
+        }
+
+        [HttpPost("/Atividade/Vincular")]
+        public IActionResult Vincular([FromBody] string atividade)
+        {
+            AtividadesUsuario atv = new()
+            {
+                AtividadeId = int.Parse(atividade),
+                UsuarioId = int.Parse(HttpContext.Session.GetString("UsuarioId"))
+            };
+
+            context.Add(atv);
+
+            context.SaveChanges();
+
+            return RedirectToAction("Index", "Conteudo");
         }
     }
 }

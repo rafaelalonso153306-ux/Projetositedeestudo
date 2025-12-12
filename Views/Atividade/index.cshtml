@@ -7,41 +7,46 @@
     </h1>
 
 
-        <h2 class="mt-5 mb-3 fw-bold text-primary">Conteúdos do Curso</h2>
+    <h2 class="mt-5 mb-3 fw-bold text-primary">Conteúdos do Curso</h2>
 
-        <div class="row g-4">
+    <div class="row g-4">
 
-            @foreach (Atividade atividade in ViewBag.ListaAtividades)
-            {
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-lg rounded-4 p-3" 
-                         style="background-color: #f7fbff;">
+        @foreach (Atividade atividade in ViewBag.ListaAtividades)
+        {
+            <div class="col-md-6">
+                <div class="card border-0 shadow-lg rounded-4 p-3" style="background-color: #f7fbff;">
 
-                        <div class="card-body">
+                    <div class="card-body">
 
-                            <h3 class="fw-bold text-dark mb-3" 
-                                style="font-size: 1.8rem;">
-                                @atividade.Titulo
-                            </h3>
+                        <h3 class="fw-bold text-dark mb-3" style="font-size: 1.8rem;">
+                            @atividade.Titulo
+                        </h3>
 
-                            <a href="/Atividade/Conteudo/@atividade.Id"
-                               class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3"
-                               style="font-size: 1.5rem;">
-                                Começar Atividade
-                            </a>
-
-                        </div>
+                        @* <a href="/Atividade/Vincular/@atividades.Id" class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3" *@
+                        <button onclick="vincularAtividade(@atividade.Id)"
+                            class="btn btn-primary w-100 py-3 fs-4 fw-bold rounded-3" style="font-size: 1.5rem;">
+                            Começar Atividade
+                        </button>
                     </div>
                 </div>
-            }
+            </div>
+        }
 
-        </div>
+    </div>
 
-        <div class="mt-5">
-            <a href="/Curso"
-               class="btn btn-secondary w-100 py-3 fs-4 fw-bold rounded-3"
-               style="font-size: 1.5rem;">
-                Voltar
-            </a>
-        </div>
+    <div class="mt-5">
+        <a href="/Curso" class="btn btn-secondary w-100 py-3 fs-4 fw-bold rounded-3" style="font-size: 1.5rem;">
+            Voltar
+        </a>
+    </div>
 </div>
+
+<script>
+    function vincularAtividade(atividade) {
+        fetch("/Atividade/Vincular", {
+            method: "Post",
+            body: JSON.stringify({ atividade: atividade }),
+        }).then(data => console.log(data))
+    }
+
+</script>
